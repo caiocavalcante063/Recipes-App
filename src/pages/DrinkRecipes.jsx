@@ -17,7 +17,7 @@ function DrinkRecipes() {
     && drinkLists[0].items.drinks.slice(0, lastRenderedCategoryIndex);
   const receitasCategoriasBebidas = searchData.drinks
     && searchData.drinks.slice(0, lastRenderedDrinkIndex);
-  const receitasSearchBebidas = searchData.length
+  const receitasSearchBebidas = searchData.length > 0
     && searchData.slice(0, lastRenderedDrinkIndex);
   return (
     <div>
