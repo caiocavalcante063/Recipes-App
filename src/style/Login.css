@@ -1,0 +1,45 @@
+#login-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#login-header {
+  position: absolute;
+  width: 97px;
+  top: 79px;
+  font-weight: normal;
+  font-size: 39px;
+}
+
+#password-input {
+  position: absolute;
+  width: 293px;
+  height: 58px;
+  top: 243px;
+  border: 1px solid #000000;
+  font-size: 29px;
+  padding-left: 14px;
+}
+
+#email-input {
+  position: absolute;
+  width: 293px;
+  height: 58px;
+  top: 155px;
+  border: 1px solid #000000;
+  font-size: 29px;
+  line-height: 34px;
+  padding-left: 14px;
+}
+
+#login-btn {
+  position: absolute;
+  width: 339px;
+  height: 76px;
+  top: 389px;
+  font-size: 29px;
+  line-height: 34px;
+  padding-left: 14px;
+  background: #6CE34F;
+}

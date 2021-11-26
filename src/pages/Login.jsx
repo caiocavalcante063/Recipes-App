@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import '../utils/index';
+import '../style/Login.css';
 
 function Login(props) {
   const [email, setEmail] = useState('');
@@ -40,12 +41,14 @@ function Login(props) {
 
   const MIN_PASSWORD_CHARACTERS = 6;
   return (
-    <div data-testid="login-page">
+    <div data-testid="login-page" id="login-wrapper">
+      <h1 id="login-header">Login</h1>
       <input
         type="email"
         name="email-input"
         id="email-input"
         data-testid="email-input"
+        placeholder="Email"
         onChange={ handleChange }
         value={ email }
       />
@@ -54,6 +57,7 @@ function Login(props) {
         name="password-input"
         id="password-input"
         data-testid="password-input"
+        placeholder="Password"
         onChange={ handleChange }
         value={ password }
       />
@@ -61,11 +65,12 @@ function Login(props) {
         type="button"
         value="Entrar"
         data-testid="login-submit-btn"
+        id="login-btn"
         disabled={ !(password.length > MIN_PASSWORD_CHARACTERS
           && validateEmail) }
         onClick={ handleClick }
       >
-        Entrar
+        Enter
       </button>
     </div>
   );
