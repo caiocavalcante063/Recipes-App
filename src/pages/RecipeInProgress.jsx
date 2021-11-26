@@ -6,6 +6,7 @@ import IngredientsCheckbox from '../components/IngredientsCheckbox';
 import Context from '../context/Context';
 import ShareButton from '../components/ShareButton';
 import FavoriteButton from '../components/FavoriteButton';
+import '../utils/index';
 import '../style/RecipeInProgress.css';
 
 const handleStateAndStorage = ({
@@ -48,6 +49,27 @@ const handleStateAndStorage = ({
   }
 };
 
+const handleClick = ({ id, type, key, detailsData, history }) => {
+  const doneRecipes = localStorage.getObj('doneRecipes');
+  // https://phoenixnap.com/kb/how-to-get-the-current-date-and-time-javascript
+  const today = new Date();
+  const date = `${today.getFullYear()}-${(today.getMonth() + 1)}-${today.getDate()}`;
+  const doneRecipeObj = {
+    id,
+    type: type === 'meals' ? 'comida' : 'bebida',
+    area: type === 'drinks' ? '' : detailsData.strArea,
+    category: detailsData.strCategory,
+    alcoholicOrNot: type === 'meals' ? '' : detailsData.strAlcoholic,
+    name: detailsData[`str${key}`],
+    image: detailsData[`str${key}Thumb`],
+    doneDate: date,
+    tags: [...[detailsData.strTags]],
+  };
+  localStorage.setObj('doneRecipes', [...doneRecipes, doneRecipeObj]);
+
+  history.push('/receitas-feitas');
+};
+
 const recipeTypeToggle = (type, param1, param2) => (type === 'meals' ? param1 : param2);
 
 function RecipeInProgress() {
@@ -64,6 +86,7 @@ function RecipeInProgress() {
   const requisition = recipeTypeToggle(type, fetchFoodReq, fetchDrinkReq);
   const key = recipeTypeToggle(type, 'Meal', 'Drink');
   const recipeType = type === 'meals' ? 'meals' : 'cocktails';
+  // eslint-disable-next-line no-unused-vars
   const history = useHistory();
 
   useEffect(() => {
@@ -162,7 +185,7 @@ function RecipeInProgress() {
         data-testid="finish-recipe-btn"
         disabled={ (usedIngredients[recipeType] && usedIngredients[recipeType][id])
           && usedIngredients[recipeType][id].length !== ingredients.length }
-        onClick={ () => history.push('/receitas-feitas') }
+        onClick={ () => handleClick({ id, type, key, detailsData, history }) }
       >
         Finish Recipe
       </button>
