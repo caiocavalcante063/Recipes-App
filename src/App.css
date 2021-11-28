@@ -1,6 +1,7 @@
 body {
   font-family: Roboto;
   margin: 0;
+  min-width: 320px;
 }
 
 .categories-btn-container {
