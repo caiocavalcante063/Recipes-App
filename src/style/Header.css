@@ -13,7 +13,6 @@ header.header-explore {
   display: flex;
   height: 58px;
   justify-content: center;
-  padding: 0px 0.5vw;
 }
 
 /* https://stackoverflow.com/questions/2460100/remove-the-complete-styling-of-an-html-button-submit */
@@ -33,5 +32,5 @@ header.header-explore {
 
 button.header-explore#profile-btn {
   position: fixed;
-  left: 0.5vw;
+  left: 1vw;
 }
