@@ -22,7 +22,7 @@ function FoodRecipes() {
 
   return (
     <div>
-      <Header title="Comidas" />
+      <Header title="Foods" />
       { categoriasComidas && categoriasComidas.map((category) => (
         <FilterByCategoryButton category={ category } key={ category.strCategory } />
       )) }
