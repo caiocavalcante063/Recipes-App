@@ -23,11 +23,14 @@ function FoodRecipes() {
   return (
     <div>
       <Header title="Foods" />
-      { categoriasComidas && categoriasComidas.map((category) => (
-        <FilterByCategoryButton category={ category } key={ category.strCategory } />
-      )) }
-      <FilterByAllButton />
-      {searchData.length === 0
+      <div className="categories-btn-container">
+        { categoriasComidas && categoriasComidas.map((category) => (
+          <FilterByCategoryButton category={ category } key={ category.strCategory } />
+        )) }
+        <FilterByAllButton />
+      </div>
+      <div className="recipes-container">
+        {searchData.length === 0
         && (receitasComidas && receitasComidas.map((meal, index) => (
           <RecipeCard
             key={ meal.idMeal }
@@ -38,23 +41,24 @@ function FoodRecipes() {
           />
         ))) }
 
-      {searchData.meals ? receitasCategoriasComidas.map((data, index) => (
-        <RecipeCard
-          key={ data.idMeal }
-          name={ data.strMeal }
-          thumb={ data.strMealThumb }
-          recipeId={ data.idMeal }
-          recipeIndex={ index }
-        />
-      )) : receitasSearchComidas && receitasSearchComidas.map((food, index) => (
-        <RecipeCard
-          key={ food.idMeal }
-          name={ food.strMeal }
-          thumb={ food.strMealThumb }
-          recipeIndex={ index }
-          recipeId={ food.idMeal }
-        />
-      ))}
+        {searchData.meals ? receitasCategoriasComidas.map((data, index) => (
+          <RecipeCard
+            key={ data.idMeal }
+            name={ data.strMeal }
+            thumb={ data.strMealThumb }
+            recipeId={ data.idMeal }
+            recipeIndex={ index }
+          />
+        )) : receitasSearchComidas && receitasSearchComidas.map((food, index) => (
+          <RecipeCard
+            key={ food.idMeal }
+            name={ food.strMeal }
+            thumb={ food.strMealThumb }
+            recipeIndex={ index }
+            recipeId={ food.idMeal }
+          />
+        ))}
+      </div>
       <Footer />
     </div>
   );

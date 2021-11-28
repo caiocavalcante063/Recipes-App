@@ -2,3 +2,26 @@ body {
   font-family: Roboto;
   margin: 0;
 }
+
+.categories-btn-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 2vh;
+  gap: 1vw;
+}
+
+.categories-btn-container button{
+  background: #C4C4C4;
+  border: none;
+  min-width: 105px;
+  height: 28px;
+}
+
+.recipes-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 2vh;
+  margin-bottom: 10vh;
+}
