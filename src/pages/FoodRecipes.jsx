@@ -23,11 +23,13 @@ function FoodRecipes() {
   return (
     <div>
       <Header title="Foods" />
-      <div className="categories-btn-container">
-        { categoriasComidas && categoriasComidas.map((category) => (
-          <FilterByCategoryButton category={ category } key={ category.strCategory } />
-        )) }
-        <FilterByAllButton />
+      <div className="categories-btn-container-parent">
+        <div className="categories-btn-container">
+          { categoriasComidas && categoriasComidas.map((category) => (
+            <FilterByCategoryButton category={ category } key={ category.strCategory } />
+          )) }
+          <FilterByAllButton />
+        </div>
       </div>
       <div className="recipes-container">
         {searchData.length === 0

@@ -1,4 +1,4 @@
-header.header-container {
+.header-container {
   align-items: center;
   background: #C4C4C4;
   display: flex;
@@ -7,12 +7,71 @@ header.header-container {
   padding: 0px 1vw;
 }
 
-header.header-explore {
+.header-explore {
   align-items: center;
   background: #C4C4C4;
   display: flex;
   height: 58px;
   justify-content: center;
+}
+
+#main-header-container {
+  display: flex;
+  flex-direction: column;
+}
+
+#search-bar {
+  margin: 1vh 0;
+  padding: 0 2vw;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#search-input {
+  margin-right: 1vw;
+  width: 100%;
+  font-size: 18px;
+} 
+
+#search-radio-container {
+  display: flex;
+  gap: 10px;
+}
+
+/* https://stackoverflow.com/questions/4253920/how-do-i-change-the-color-of-radio-buttons */
+.radio-search:after {
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  top: -4px;
+  left: -1px;
+  position: relative;
+  background: #C4C4C4;
+  content: '';
+  display: inline-block;
+  visibility: visible;
+  border: 2px solid white;
+}
+
+.radio-search:checked:after {
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  top: -4px;
+  left: -1px;
+  position: relative;
+  background-color: rgb(138, 138, 138);
+  content: '';
+  display: inline-block;
+  visibility: visible;
+  border: 2px solid white;
+}
+
+#searchbar-btn {
+  background: #C4C4C4;
+  border: none;
+  width: 85px;
+  height: 28px;
+  margin-bottom: 1vh;
 }
 
 /* https://stackoverflow.com/questions/2460100/remove-the-complete-styling-of-an-html-button-submit */

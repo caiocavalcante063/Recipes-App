@@ -45,57 +45,67 @@ export default function SearchBar({ title }) {
   };
 
   return (
-    <form>
+    <form id="searchBar-form">
       <input
         type="text"
         onChange={ (e) => searchRecipes(e, checkValue) }
         value={ searchText }
         data-testid="search-input"
+        id="search-input"
+        placeholder="Search Recipe"
       />
       <div
         onChange={ (e) => setCheckValue(e.target.value) }
+        id="search-radio-container"
       >
-        <label htmlFor="ingredientID">
+        <label htmlFor="ingredientID" className="radio-search-label">
           <input
             type="radio"
             value="i"
             name="searchBar"
+            className="radio-search"
             onClick={ () => setType('filter') }
             id="ingredientID"
             data-testid="ingredient-search-radio"
           />
-          Ingrediente
+          {' '}
+          Ingredient
         </label>
-        <label htmlFor="nameID">
+        <label htmlFor="nameID" className="radio-search-label">
 
           <input
             type="radio"
             value="s"
             name="searchBar"
+            className="radio-search"
             onClick={ () => setType('search') }
             id="nameID"
             data-testid="name-search-radio"
           />
-          Nome
+          {' '}
+          Name
         </label>
-        <label htmlFor="firstID">
+        <label htmlFor="firstID" className="radio-search-label">
           <input
             type="radio"
             value="f"
             name="searchBar"
+            className="radio-search"
             onClick={ () => setType('search') }
             id="firstID"
             data-testid="first-letter-search-radio"
           />
-          Primeira letra
+          {' '}
+          First Letter
         </label>
       </div>
       <button
         type="button"
         data-testid="exec-search-btn"
+        id="searchbar-btn"
         onClick={ () => handleSearch(type, checkValue, searchText) }
       >
-        Buscar
+        Search
       </button>
     </form>
   );

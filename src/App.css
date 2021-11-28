@@ -6,22 +6,26 @@ body {
 .categories-btn-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 2vh;
+  justify-content: space-between;
+  margin: 0.5vh 2vw;
   gap: 1vw;
 }
 
 .categories-btn-container button{
   background: #C4C4C4;
   border: none;
-  min-width: 105px;
+  width: 151px;
   height: 28px;
 }
 
 .recipes-container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 2vh 2vw 10vh 2vw;
+}
+
+.categories-btn-container-parent {
+  display: flex;
   justify-content: center;
-  margin-top: 2vh;
-  margin-bottom: 10vh;
 }

@@ -33,29 +33,30 @@ export default function Header({ title }) {
   if (redirect) return <Redirect to="/perfil" />;
 
   return (
-    <header className={ classNameHandler(path) }>
-      <button
-        type="button"
-        onClick={ () => setRedirect(true) }
-        id="profile-btn"
-        className={ classNameHandler(path) }
-      >
-        <img
-          src={ profileIcon }
-          alt="Perfil"
-          data-testid="profile-top-btn"
-          className="header-icons"
-        />
-      </button>
+    <header id="main-header-container">
+      <div className={ classNameHandler(path) }>
+        <button
+          type="button"
+          onClick={ () => setRedirect(true) }
+          id="profile-btn"
+          className={ classNameHandler(path) }
+        >
+          <img
+            src={ profileIcon }
+            alt="Perfil"
+            data-testid="profile-top-btn"
+            className="header-icons"
+          />
+        </button>
 
-      <p
-        data-testid="page-title"
-        id="page-title"
-      >
-        {title}
-      </p>
+        <p
+          data-testid="page-title"
+          id="page-title"
+        >
+          {title}
+        </p>
 
-      {!isExploring
+        {!isExploring
         && (
           <button
             type="button"
@@ -70,14 +71,15 @@ export default function Header({ title }) {
               className="header-icons"
             />
           </button>)}
-
-      {
-        searchBar && (
-          <SearchBar
-            title={ title }
-          />)
-      }
-
+      </div>
+      <div id="search-bar">
+        {
+          searchBar && (
+            <SearchBar
+              title={ title }
+            />)
+        }
+      </div>
     </header>
   );
 }
