@@ -9,14 +9,14 @@ function Perfil() {
     ? JSON.parse(localStorage.getItem('user')).email : 'email';
   return (
     <div>
-      <Header title="Perfil" />
+      <Header title="Profile" />
       <h2 data-testid="profile-email">{ userEmail }</h2>
       <Link to="/receitas-feitas">
         <button
           type="button"
           data-testid="profile-done-btn"
         >
-          Receitas Feitas
+          Recipes Done
         </button>
       </Link>
       <Link to="/receitas-favoritas">
@@ -24,7 +24,7 @@ function Perfil() {
           type="button"
           data-testid="profile-favorite-btn"
         >
-          Receitas Favoritas
+          Favorite Recipes
         </button>
       </Link>
       <Link to="/">
@@ -33,7 +33,7 @@ function Perfil() {
           data-testid="profile-logout-btn"
           onClick={ () => localStorage.clear() }
         >
-          Sair
+          Logout
         </button>
       </Link>
       <Footer />

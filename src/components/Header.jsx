@@ -24,10 +24,10 @@ export default function Header({ title }) {
   const path = location.pathname;
 
   useEffect(() => {
-    if (title.includes('Explorar')) setIsExploring(true);
-    if (title.includes('Receitas')) setIsExploring(true);
-    if (title.includes('Perfil')) setIsExploring(true);
-    if (title.includes('Origem')) setIsExploring(false);
+    if (title.includes('Explore')) setIsExploring(true);
+    if (title.includes('Recipes')) setIsExploring(true);
+    if (title.includes('Profile')) setIsExploring(true);
+    if (title.includes('Origin')) setIsExploring(false);
   }, [title]);
 
   if (redirect) return <Redirect to="/perfil" />;

@@ -37,7 +37,7 @@ function Favorites() {
 
   return (
     <>
-      <Header title="Receitas Favoritas" />
+      <Header title="Favorite Recipes" />
       { favoriteButtons.map((button) => (
         <button
           type="button"

@@ -14,7 +14,7 @@ function ExploreFood() {
   };
   return (
     <div>
-      <Header title="Explorar Comidas" />
+      <Header title="Explore Foods" />
       <div>
         <LinkButton
           text="Por Ingredientes"

@@ -6,16 +6,16 @@ import LinkButton from '../components/LinkButton';
 function Explore() {
   return (
     <div>
-      <Header title="Explorar" />
+      <Header title="Explore" />
       <div>
         <LinkButton
-          text="Explorar Comidas"
+          text="Explore Foods"
           linkTo="/explorar/comidas"
           testid="explore-food"
         />
 
         <LinkButton
-          text="Explorar Bebidas"
+          text="Explore Drinks"
           linkTo="/explorar/bebidas"
           testid="explore-drinks"
         />

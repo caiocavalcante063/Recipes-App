@@ -15,10 +15,10 @@ function ExploreDrink() {
 
   return (
     <div>
-      <Header title="Explorar Bebidas" />
+      <Header title="Explore Drinks" />
       <div>
         <LinkButton
-          text="Por Ingredientes"
+          text="By Ingredient"
           testid="explore-by-ingredient"
           linkTo="/explorar/bebidas/ingredientes"
         />
@@ -28,7 +28,7 @@ function ExploreDrink() {
           data-testid="explore-surprise"
           onClick={ randomRecipe }
         >
-          Me Surpreenda!
+          Surprise me!
         </button>
 
       </div>

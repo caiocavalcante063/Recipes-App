@@ -21,7 +21,7 @@ function DrinkRecipes() {
     && searchData.slice(0, lastRenderedDrinkIndex);
   return (
     <div>
-      <Header title="Bebidas" />
+      <Header title="Drinks" />
       { categoriasBebidas && categoriasBebidas.map((category) => (
         <FilterByCategoryButton category={ category } key={ category.strCategory } />
       )) }

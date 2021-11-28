@@ -21,7 +21,7 @@ function RecipesMade() {
 
   return (
     <>
-      <Header title="Receitas Feitas" />
+      <Header title="Recipes Done" />
       <div>
         <div>
           <button
@@ -101,8 +101,6 @@ function RecipesMade() {
               />
 
             </div>))}
-
-          Gerador de card das receitas feitas
         </div>
       </div>
     </>
