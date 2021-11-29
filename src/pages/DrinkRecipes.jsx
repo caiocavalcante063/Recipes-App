@@ -21,12 +21,15 @@ function DrinkRecipes() {
     && searchData.slice(0, lastRenderedDrinkIndex);
   return (
     <div>
-      <Header title="Bebidas" />
-      { categoriasBebidas && categoriasBebidas.map((category) => (
-        <FilterByCategoryButton category={ category } key={ category.strCategory } />
-      )) }
-      <FilterByAllButton />
-      {searchData.length === 0
+      <Header title="Drinks" />
+      <div className="categories-btn-container">
+        { categoriasBebidas && categoriasBebidas.map((category) => (
+          <FilterByCategoryButton category={ category } key={ category.strCategory } />
+        )) }
+        <FilterByAllButton />
+      </div>
+      <div className="recipes-container">
+        {searchData.length === 0
         && (receitasBebidas && receitasBebidas.map((bebida, index) => (
           <RecipeCard
             key={ bebida.idDrink }
@@ -36,23 +39,24 @@ function DrinkRecipes() {
             recipeId={ bebida.idDrink }
           />
         ))) }
-      {searchData.drinks ? receitasCategoriasBebidas.map((drink, index) => (
-        <RecipeCard
-          key={ drink.idDrink }
-          name={ drink.strDrink }
-          thumb={ drink.strDrinkThumb }
-          recipeIndex={ index }
-          recipeId={ drink.idDrink }
-        />
-      )) : receitasSearchBebidas && receitasSearchBebidas.map((data, index) => (
-        index < lastRenderedDrinkIndex && <RecipeCard
-          key={ data.idDrink }
-          name={ data.strDrink }
-          thumb={ data.strDrinkThumb }
-          recipeIndex={ index }
-          recipeId={ data.idDrink }
-        />
-      ))}
+        {searchData.drinks ? receitasCategoriasBebidas.map((drink, index) => (
+          <RecipeCard
+            key={ drink.idDrink }
+            name={ drink.strDrink }
+            thumb={ drink.strDrinkThumb }
+            recipeIndex={ index }
+            recipeId={ drink.idDrink }
+          />
+        )) : receitasSearchBebidas && receitasSearchBebidas.map((data, index) => (
+          index < lastRenderedDrinkIndex && <RecipeCard
+            key={ data.idDrink }
+            name={ data.strDrink }
+            thumb={ data.strDrinkThumb }
+            recipeIndex={ index }
+            recipeId={ data.idDrink }
+          />
+        ))}
+      </div>
       <Footer />
     </div>
   );

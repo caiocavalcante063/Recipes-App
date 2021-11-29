@@ -1,10 +1,11 @@
 .footer-menu {
   align-items: center;
-  background-color: #ff1201;
+  background: #C4C4C4;
   bottom: 0;
+  padding-bottom: 10vh;
   display: flex;
-  justify-content: space-around;
-  padding: 2px;
+  justify-content: space-between;
+  padding: 1vh 1vw;
   position: fixed;
   width: 100%;
 }

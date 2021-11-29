@@ -2,20 +2,24 @@ import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import LinkButton from '../components/LinkButton';
+import '../style/Explore.css';
 
 function Explore() {
   return (
     <div>
-      <Header title="Explorar" />
-      <div>
+      <Header title="Explore" />
+      <div id="explore-foods-container">
         <LinkButton
-          text="Explorar Comidas"
+          id="explore-foods-btn"
+          text="Explore Foods"
           linkTo="/explorar/comidas"
           testid="explore-food"
         />
-
+      </div>
+      <div id="explore-drinks-container">
         <LinkButton
-          text="Explorar Bebidas"
+          id="explore-drinks-btn"
+          text="Explore Drinks"
           linkTo="/explorar/bebidas"
           testid="explore-drinks"
         />

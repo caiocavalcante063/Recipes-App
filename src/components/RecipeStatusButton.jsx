@@ -37,14 +37,14 @@ export default function RecipeStatusButton({ recipeId, type }) {
       if (isDone) setVisibilityStatus('visible');
       if (inProgress) {
         setVisibilityStatus('visible');
-        setRecipeStatus('Continuar Receita');
+        setRecipeStatus('Continue');
       }
     };
     compareId();
   }, [recipeId, key]);
 
   const handleClick = () => {
-    if (recipeStatus === 'Iniciar Receita') {
+    if (recipeStatus === 'Start Recipe') {
       return history.push(`${pathname}/in-progress`);
     }
   };
