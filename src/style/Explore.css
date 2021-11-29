@@ -1,0 +1,39 @@
+#explore-foods-btn, #explore-drinks-btn {
+  background: white;
+  border: none;
+  border-radius: 6px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-size: 32px;
+  height: 82px;
+  line-height: 37px;
+  text-align: start;
+  width: 96vw;
+}
+
+#explore-foods-container, #explore-drinks-container {
+  height: 82px;
+  margin-bottom: 5vh;
+  text-align: center;
+}
+
+.explore-details-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1vw;
+  justify-content: center;
+  margin: 0;
+  width: 100%;
+}
+
+.explore-details-btn {
+  background: white;
+  border: none;
+  border-radius: 6px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-size: 24px;
+  height: 82px;
+  line-height: 37px;
+  max-width: 145px;
+  margin: 0.5vh 0.5vw;
+  text-align: start;
+}

@@ -4,7 +4,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import LinkButton from '../components/LinkButton';
 import { fetchRandomRecipe } from '../services/APIs';
-// import PropTypes from 'prop-types';
+import '../style/Explore.css';
 
 function ExploreFood() {
   const history = useHistory();
@@ -15,23 +15,26 @@ function ExploreFood() {
   return (
     <div>
       <Header title="Explore Foods" />
-      <div>
+      <div className="explore-details-container">
         <LinkButton
-          text="Por Ingredientes"
+          text="By Ingredient"
           testid="explore-by-ingredient"
           linkTo="/explorar/comidas/ingredientes"
+          className="explore-details-btn"
         />
         <LinkButton
-          text="Por Local de Origem"
+          text="By Location of Origin"
           testid="explore-by-area"
           linkTo="/explorar/comidas/area"
+          className="explore-details-btn"
         />
         <button
           type="button"
           data-testid="explore-surprise"
           onClick={ randomRecipe }
+          className="explore-details-btn"
         >
-          Me Surpreenda!
+          Surprise me!
         </button>
       </div>
       <Footer />
