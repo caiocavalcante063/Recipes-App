@@ -90,6 +90,6 @@
 }
 
 button.header-explore#profile-btn {
-  position: fixed;
+  position: absolute;
   left: 1vw;
 }

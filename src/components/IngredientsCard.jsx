@@ -37,29 +37,31 @@ export default function IngredientsCard({ type, mainRote }) {
   };
 
   return (
-    <section className="ingredients-container">
+    <section className="recipes-container">
       { ingredients.map((ingredient, index) => index < maxLength && (
         <Link
           to={ `/${mainRote}` }
           onClick={ () => redirectCorrectly(ingredient) }
         >
           <div
-            className="ingredient-card"
+            className="recipe-card"
             key={ ingredient }
             data-testid={ `${index}-ingredient-card` }
           >
-            <img
-              src={ `${imgUrl}${ingredient}-Small.png` }
-              alt="Ingredient"
-              className="ingredient-card"
-              data-testid={ `${index}-card-img` }
-            />
-            <span
-              className="ingredient-name"
+            <div className="img-container-recipe">
+              <img
+                src={ `${imgUrl}${ingredient}-Small.png` }
+                alt="Ingredient"
+                className="recipe-image"
+                data-testid={ `${index}-card-img` }
+              />
+            </div>
+            <h2
+              className="recipe-header"
               data-testid={ `${index}-card-name` }
             >
               {ingredient}
-            </span>
+            </h2>
           </div>
         </Link>
       )) }

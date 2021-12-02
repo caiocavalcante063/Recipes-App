@@ -1,0 +1,29 @@
+.profile-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0;
+  width: 98vw;
+}
+
+.profile-email {
+  font-size: 30px;
+  margin: 4vh 0;
+}
+
+.profile-btn {
+  background: #C4C4C4;
+  border: none;
+  font-size: 25px;
+  height: 53px;
+  margin-bottom: 2vh;
+  width: 300px;
+}
+
+.profile-btn-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 1vw;
+}
