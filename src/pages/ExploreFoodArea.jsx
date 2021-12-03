@@ -23,23 +23,26 @@ function ExploreFoodArea() {
   return (
     <div>
       <Header title="Explore Origin" />
-      <select
-        className="area-dropdown"
-        data-testid="explore-by-area-dropdown"
-        onChange={ ({ target }) => searchArea(target.value) }
-      >
-        <option data-testid="All-option" value="All">All</option>
-        { area.map((item) => (
-          <option
-            data-testid={ `${item.strArea}-option` }
-            key={ item.strArea }
-            value={ item.strArea }
-          >
-            { `${item.strArea}` }
-          </option>
+      <div className="area-dropdown-container">
+        <select
+          className="area-dropdown"
+          data-testid="explore-by-area-dropdown"
+          onChange={ ({ target }) => searchArea(target.value) }
+        >
+          <option data-testid="All-option" value="All">All</option>
+          { area.map((item) => (
+            <option
+              data-testid={ `${item.strArea}-option` }
+              key={ item.strArea }
+              value={ item.strArea }
+            >
+              { `${item.strArea}` }
+            </option>
         )) }
-      </select>
-      {!searchData.meals ? foodRecipes
+        </select>
+      </div>
+      <div className="recipes-container">
+        {!searchData.meals ? foodRecipes
         .map((meal, index) => index < maxLength
           && (
             <RecipeCard
@@ -58,6 +61,7 @@ function ExploreFoodArea() {
           recipeId={ data.idMeal }
         />
       ))}
+      </div>
       <Footer />
     </div>
   );

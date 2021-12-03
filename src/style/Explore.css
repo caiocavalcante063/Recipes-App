@@ -37,3 +37,15 @@
   margin: 0.5vh 0.5vw;
   text-align: start;
 }
+
+.area-dropdown-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.area-dropdown {
+  font-size: 30px;
+  justify-content: center;
+  width: 98vw;
+}
