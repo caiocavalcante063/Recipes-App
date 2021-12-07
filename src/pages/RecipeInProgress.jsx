@@ -128,68 +128,90 @@ function RecipeInProgress() {
   if (!detailsData || !ingredients) return <h3> Loading...</h3>;
 
   return (
-    <section className="details-container">
-      <img
-        className="details-image"
-        src={ detailsData[`str${key}Thumb`] }
-        alt=""
-        data-testid="recipe-photo"
-        swidth="320"
-        height="205"
-
-      />
-      <h3
-        className="recipe-title"
-        data-testid="recipe-title"
-      >
-        {detailsData[`str${key}`]}
-      </h3>
-      <h4 data-testid="recipe-category">
-        { key === 'Drink' && detailsData.strAlcoholic }
-      </h4>
-      <h4 data-testid="recipe-category" className="recipe-category">
-        { detailsData.strCategory }
-      </h4>
-      <ShareButton
-        testId="share-btn"
-        route={ path.split('/in-progress')[0] }
-      />
-      <FavoriteButton
-        id={ id }
-        type={ type === 'drinks' ? 'bebida' : 'comida' }
-        area={ type === 'drinks' ? '' : detailsData.strArea }
-        category={ detailsData.strCategory }
-        alcoholicOrNot={ type === 'meals' ? '' : detailsData.strAlcoholic }
-        name={ detailsData[`str${key}`] }
-        image={ detailsData[`str${key}Thumb`] }
-      />
-      { ingredients.map((ingredient, index) => (
-        <p
-          key={ ingredient }
-          data-testid={ `${index}-ingredient-step` }
-          className="details-ingredient"
-        >
-          <IngredientsCheckbox
-            type={ type }
-            id={ id }
-            index={ index }
-            ingredient={ ingredient }
+    <main>
+      <section className="details-container">
+        <div className="img-container">
+          <img
+            className="details-image"
+            src={ detailsData[`str${key}Thumb`] }
+            alt=""
+            data-testid="recipe-photo"
+            width="300"
           />
-          {`${ingredient} - ${measures[index]}` }
-        </p>)) }
-      <p data-testid="instructions" className="instructions">
-        { detailsData.strInstructions }
-      </p>
-      <button
-        type="button"
-        data-testid="finish-recipe-btn"
-        disabled={ (usedIngredients[recipeType] && usedIngredients[recipeType][id])
+        </div>
+        <div className="main-details-container">
+          <h3
+            className="recipe-title"
+            data-testid="recipe-title"
+          >
+            {detailsData[`str${key}`]}
+          </h3>
+          <h4 data-testid="recipe-category" className="recipe-category-drink">
+            { key === 'Drink' && detailsData.strAlcoholic }
+          </h4>
+          <div className="btn-container-details">
+            <ShareButton testId="share-btn" route={ path } />
+            <FavoriteButton
+              id={ id }
+              type={ type === 'drinks' ? 'bebida' : 'comida' }
+              area={ type === 'drinks' ? '' : detailsData.strArea }
+              category={ detailsData.strCategory }
+              alcoholicOrNot={ type === 'meals' ? '' : detailsData.strAlcoholic }
+              name={ detailsData[`str${key}`] }
+              image={ detailsData[`str${key}Thumb`] }
+            />
+          </div>
+          <p
+            data-testid="recipe-category"
+            className="recipe-category"
+          >
+            { detailsData.strCategory }
+          </p>
+        </div>
+        <div className="ingredients-main-container">
+          <h3 className="ingredients-title">Ingredients</h3>
+          <div className="ingredients-container">
+            { ingredients.map((ingredient, index) => (
+              <p
+                key={ ingredient }
+                data-testid={ `${index}-ingredient-step` }
+                className="details-ingredient"
+              >
+                <IngredientsCheckbox
+                  type={ type }
+                  id={ id }
+                  index={ index }
+                  ingredient={ ingredient }
+                />
+                {`${ingredient} - ${measures[index]}` }
+              </p>)) }
+          </div>
+        </div>
+        <div className="instructions-main-container">
+          <h3 className="instructions-title">Instructions</h3>
+          <div className="instructions-container">
+            <p
+              data-testid="instructions"
+              className="instructions"
+            >
+              { detailsData.strInstructions }
+            </p>
+          </div>
+        </div>
+      </section>
+      <div className="status-btn-container">
+        <button
+          type="button"
+          data-testid="finish-recipe-btn"
+          className="details-start-recipe"
+          disabled={ (usedIngredients[recipeType] && usedIngredients[recipeType][id])
           && usedIngredients[recipeType][id].length !== ingredients.length }
-        onClick={ () => handleClick({ id, type, key, detailsData, history }) }
-      >
-        Finish Recipe
-      </button>
-    </section>
+          onClick={ () => handleClick({ id, type, key, detailsData, history }) }
+        >
+          Finish Recipe
+        </button>
+      </div>
+    </main>
   );
 }
 

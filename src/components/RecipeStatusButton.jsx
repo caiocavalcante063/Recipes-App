@@ -5,8 +5,9 @@ import '../utils/index';
 import Context from '../context/Context';
 
 export default function RecipeStatusButton({ recipeId, type }) {
+  const startRecipe = 'Start Recipe';
   const [visibilityStatus, setVisibilityStatus] = useState('hidden');
-  const [recipeStatus, setRecipeStatus] = useState('Start Recipe');
+  const [recipeStatus, setRecipeStatus] = useState(startRecipe);
   const key = type === 'meals' ? 'meals' : 'cocktails';
   const history = useHistory();
   const { pathname } = useLocation();
@@ -39,13 +40,15 @@ export default function RecipeStatusButton({ recipeId, type }) {
       if (inProgress) {
         setVisibilityStatus('visible');
         setRecipeStatus('Continue');
+      } else {
+        setRecipeStatus(startRecipe);
       }
     };
     compareId();
   }, [recipeId, key]);
 
   const handleClick = () => {
-    if (recipeStatus === 'Start Recipe' || recipeStatus === 'Continue') {
+    if (recipeStatus === startRecipe || recipeStatus === 'Continue') {
       return history.push(`${pathname}/in-progress`);
     }
   };
