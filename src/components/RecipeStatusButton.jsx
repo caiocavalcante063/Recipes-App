@@ -39,6 +39,8 @@ export default function RecipeStatusButton({ recipeId, type }) {
       if (inProgress) {
         setVisibilityStatus('visible');
         setRecipeStatus('Continue');
+      } else {
+        setRecipeStatus('Start Recipe');
       }
     };
     compareId();
