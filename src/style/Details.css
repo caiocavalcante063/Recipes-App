@@ -1,10 +1,116 @@
-.details-start-recipe {
-  bottom: 0;
-  position: fixed;
+@media screen and (max-width: 600px) {
+	.details-image {
+    border-radius: 6px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    width: 60%;
+  }
 }
 
-.details-image {
-  border-radius: 20px;
-  margin: 20px;
-  width: 350px;
+@media screen and (min-width: 600px) {
+	.details-image {
+    border-radius: 6px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    width: 360px;
+  }
+}
+
+.details-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+.img-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2vh;
+}
+
+.main-details-container {
+  height: 100px;
+  position: relative;
+  width: 100%;
+}
+
+.recipe-title {
+  font-size: 30px;
+  font-weight: 400;
+  left: 2vw;
+  margin: 0;
+  position: absolute;
+}
+
+.recipe-category {
+  color: #A9A9A9;
+  font-size: 21px;
+  left: 2vw;
+  top: 40px;
+  position: absolute;
+}
+
+.recipe-category-drink {
+  color: #A9A9A9;
+  font-size: 21px;
+  font-weight: 400;
+  left: 2vw;
+  top: 70px;
+  position: absolute;
+}
+
+.btn-container-details {
+  right: 2vw;
+  position: absolute;
+}
+
+.share-btn, .fav-btn {
+  background: none;
+  border: none;
+}
+
+.ingredients-title, .instructions-title, .video-title, .carousel-title {
+  font-weight: 400;
+  left: 0px;
+  /* margin: 0 2vw; */
+  position: relative;
+}
+
+.ingredients-container, .instructions-container {
+  background-color: #ECECEC;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  padding: 10px;
+}
+
+.ingredients-main-container, .instructions-main-container, .video-main-container {
+  width: 94vw;
+}
+
+.video-container {
+  background-color: #ECECEC;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  padding: 10px;
+  text-align: center;
+}
+
+.instructions {
+  width: 95%;
+}
+
+.carousel-container {
+ margin: 0 2vw;
+}
+
+.details-start-recipe {
+  width: 293px;
+  height: 76px;
+  font-size: 29px;
+  line-height: 34px;
+  background: #6CE34F;
+}
+
+.status-btn-container {
+  margin: 3vh 0;
+  text-align: center;
 }

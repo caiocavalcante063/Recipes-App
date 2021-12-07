@@ -19,6 +19,7 @@ function ShareButton({ testId, route }) {
       data-testid={ testId }
       onClick={ handleShareButton }
       src="../src/images/shareIcon.svg"
+      className="share-btn"
     >
       <img src={ share } alt="share" />
       {isSharing}
