@@ -45,7 +45,7 @@ export default function RecipeStatusButton({ recipeId, type }) {
   }, [recipeId, key]);
 
   const handleClick = () => {
-    if (recipeStatus === 'Start Recipe') {
+    if (recipeStatus === 'Start Recipe' || recipeStatus === 'Continue') {
       return history.push(`${pathname}/in-progress`);
     }
   };
