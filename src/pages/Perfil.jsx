@@ -19,7 +19,7 @@ function Perfil() {
               data-testid="profile-done-btn"
               className="profile-btn"
             >
-              Recipes Done
+              Done Recipes
             </button>
           </Link>
           <Link to="/receitas-favoritas">
