@@ -63,6 +63,7 @@ function FavoriteButton({ id,
       data-testid={ testId }
       onClick={ handleFavButton }
       src={ favorited ? blackHeart : whiteHeart }
+      className="fav-btn"
     >
       <img src={ favorited ? blackHeart : whiteHeart } alt="favorite" />
     </button>

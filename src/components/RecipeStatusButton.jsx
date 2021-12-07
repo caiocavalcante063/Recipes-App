@@ -6,7 +6,7 @@ import Context from '../context/Context';
 
 export default function RecipeStatusButton({ recipeId, type }) {
   const [visibilityStatus, setVisibilityStatus] = useState('hidden');
-  const [recipeStatus, setRecipeStatus] = useState('Iniciar Receita');
+  const [recipeStatus, setRecipeStatus] = useState('Start Recipe');
   const key = type === 'meals' ? 'meals' : 'cocktails';
   const history = useHistory();
   const { pathname } = useLocation();
@@ -27,6 +27,7 @@ export default function RecipeStatusButton({ recipeId, type }) {
       });
     }
   }, [setUsedIngredients]);
+
   useEffect(() => {
     const compareId = () => {
       const doneRecipes = localStorage.getObj('doneRecipes');

@@ -50,66 +50,100 @@ function Details() {
     && detailsData.strYoutube.replace('watch?v=', 'embed/');
 
   return (
-    <section className="details-container">
-      <img
-        className="details-image"
-        src={ detailsData[`str${key}Thumb`] }
-        alt=""
-        data-testid="recipe-photo"
-        width="300"
-      />
-      <h3
-        className="recipe-title"
-        data-testid="recipe-title"
-      >
-        {detailsData[`str${key}`]}
-      </h3>
-      <h4 data-testid="recipe-category">
-        { key === 'Drink' && detailsData.strAlcoholic }
-      </h4>
-      <ShareButton testId="share-btn" route={ path } />
-      <FavoriteButton
-        id={ id }
-        type={ type === 'drinks' ? 'bebida' : 'comida' }
-        area={ type === 'drinks' ? '' : detailsData.strArea }
-        category={ detailsData.strCategory }
-        alcoholicOrNot={ type === 'meals' ? '' : detailsData.strAlcoholic }
-        name={ detailsData[`str${key}`] }
-        image={ detailsData[`str${key}Thumb`] }
-      />
-      <p
-        data-testid="recipe-category"
-        className="recipe-category"
-      >
-        { detailsData.strCategory }
-      </p>
-      { ingredients.map((ingredient, index) => (
-        <p
-          key={ ingredient }
-          data-testid={ `${index}-ingredient-name-and-measure` }
-          className="details-ingredient"
-        >
-          {`-${ingredient} - ${measures[index]}` }
-        </p>)) }
-      <p
-        data-testid="instructions"
-        className="instructions"
-      >
-        { detailsData.strInstructions }
-      </p>
-      {key !== 'Drink' && <iframe
-        title="myFrame"
-        width="420"
-        height="315"
-        src={ youtubeEmbed }
-        data-testid="video"
-      />}
-      <RecommendationCarousel type={ type } />
-      <RecipeStatusButton
-        recipeId={ id }
-        type={ type }
-      />
-    </section>
+    <main>
+      <section className="details-container">
+        <div className="img-container">
+          <img
+            className="details-image"
+            src={ detailsData[`str${key}Thumb`] }
+            alt=""
+            data-testid="recipe-photo"
+            width="300"
+          />
+        </div>
+        <div className="main-details-container">
+          <h3
+            className="recipe-title"
+            data-testid="recipe-title"
+          >
+            {detailsData[`str${key}`]}
+          </h3>
+          <h4 data-testid="recipe-category" className="recipe-category-drink">
+            { key === 'Drink' && detailsData.strAlcoholic }
+          </h4>
+          <div className="btn-container-details">
+            <ShareButton testId="share-btn" route={ path } />
+            <FavoriteButton
+              id={ id }
+              type={ type === 'drinks' ? 'bebida' : 'comida' }
+              area={ type === 'drinks' ? '' : detailsData.strArea }
+              category={ detailsData.strCategory }
+              alcoholicOrNot={ type === 'meals' ? '' : detailsData.strAlcoholic }
+              name={ detailsData[`str${key}`] }
+              image={ detailsData[`str${key}Thumb`] }
+            />
+          </div>
+          <p
+            data-testid="recipe-category"
+            className="recipe-category"
+          >
+            { detailsData.strCategory }
+          </p>
+        </div>
+        <div className="ingredients-main-container">
+          <h3 className="ingredients-title">Ingredients</h3>
+          <div className="ingredients-container">
+            { ingredients.map((ingredient, index) => (
+              <p
+                key={ ingredient }
+                data-testid={ `${index}-ingredient-name-and-measure` }
+                className="details-ingredient"
+              >
+                {`-${ingredient} - ${measures[index]}` }
+              </p>)) }
+          </div>
+        </div>
+        <div className="instructions-main-container">
+          <h3 className="instructions-title">Instructions</h3>
+          <div className="instructions-container">
+            <p
+              data-testid="instructions"
+              className="instructions"
+            >
+              { detailsData.strInstructions }
+            </p>
+          </div>
+        </div>
+        {
+          key !== 'Drink' && (
+            <div className="video-main-container">
+              <h3 className="video-title">Video</h3>
+              <div className="video-container">
+                <iframe
+                  title="myFrame"
+                  width="420"
+                  height="315"
+                  src={ youtubeEmbed }
+                  data-testid="video"
+                />
+              </div>
+            </div>
+          )
+        }
+      </section>
+      <div className="carousel-container">
+        <h3 className="carousel-title">Recommended</h3>
+        <div className="carousel-container">
+          <RecommendationCarousel type={ type } />
+        </div>
+      </div>
+      <div className="status-btn-container">
+        <RecipeStatusButton
+          recipeId={ id }
+          type={ type }
+        />
+      </div>
+    </main>
   );
 }
 
