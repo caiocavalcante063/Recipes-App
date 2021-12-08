@@ -62,12 +62,14 @@ function Details() {
           />
         </div>
         <div className="main-details-container">
-          <h3
-            className="recipe-title"
-            data-testid="recipe-title"
-          >
-            {detailsData[`str${key}`]}
-          </h3>
+          <div className="recipe-title-container">
+            <h3
+              className="recipe-title"
+              data-testid="recipe-title"
+            >
+              {detailsData[`str${key}`]}
+            </h3>
+          </div>
           <h4 data-testid="recipe-category" className="recipe-category-drink">
             { key === 'Drink' && detailsData.strAlcoholic }
           </h4>

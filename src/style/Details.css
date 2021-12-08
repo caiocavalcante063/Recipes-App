@@ -1,8 +1,37 @@
+@media screen and (max-width: 360px) {
+	.details-image {
+    border-radius: 6px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    width: 60%;
+  }
+
+  .recipe-title {
+    font-size: 30px;
+    font-weight: 400;
+    left: 0;
+    margin: 0;
+    position: absolute;
+
+    max-width: 230px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
 @media screen and (max-width: 600px) {
 	.details-image {
     border-radius: 6px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     width: 60%;
+  }
+
+  .recipe-title {
+    font-size: 30px;
+    font-weight: 400;
+    left: 0;
+    margin: 0;
+    position: absolute;
   }
 }
 
@@ -11,6 +40,14 @@
     border-radius: 6px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     width: 360px;
+  }
+
+  .recipe-title {
+    font-size: 30px;
+    font-weight: 400;
+    left: 0;
+    margin: 0;
+    position: absolute;
   }
 }
 
@@ -33,12 +70,11 @@
   width: 94vw;
 }
 
-.recipe-title {
-  font-size: 30px;
-  font-weight: 400;
-  left: 0;
-  margin: 0;
-  position: absolute;
+.recipe-title-container {
+  display: flex;
+  flex-wrap: wrap;
+  height: fit-content;
+  width: 180px;
 }
 
 .recipe-category {
@@ -96,6 +132,11 @@
 
 .instructions {
   width: 95%;
+}
+
+.video-container iframe {
+  height: 27.84vh;
+  width: 80vw;
 }
 
 .carousel-container {
