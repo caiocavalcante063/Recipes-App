@@ -33,6 +33,11 @@
     margin: 0;
     position: absolute;
   }
+
+  .video-container iframe {
+    height: 27.84vh;
+    width: 80vw;
+  }
 }
 
 @media screen and (min-width: 600px) {
@@ -107,7 +112,6 @@
 .ingredients-title, .instructions-title, .video-title, .carousel-title {
   font-weight: 400;
   left: 0px;
-  /* margin: 0 2vw; */
   position: relative;
 }
 
@@ -132,11 +136,6 @@
 
 .instructions {
   width: 95%;
-}
-
-.video-container iframe {
-  height: 27.84vh;
-  width: 80vw;
 }
 
 .carousel-container {
