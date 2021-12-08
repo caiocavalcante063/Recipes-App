@@ -1,0 +1,30 @@
+.fav-title-container {
+  color: black;
+  font-size: 21px;
+  left: 0.5vw;
+  height: 100px;
+  line-height: 21px;
+  position: absolute;
+  text-decoration: none;
+  top: 6vh;
+}
+
+.fav-title-container p {
+  max-width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.fav-recipe-category-container {
+  color: #A9A9A9;
+  font-size: 15px;
+  left: 0.5vw;
+  position: absolute;
+  top: 2vh;
+}
+
+.fav-btns-container {
+  position: absolute;
+  top: 12vh;
+}
