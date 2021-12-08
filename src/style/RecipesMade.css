@@ -44,11 +44,18 @@
   color: black;
   font-size: 21px;
   left: 0.5vw;
+  height: 100px;
+  line-height: 21px;
   position: absolute;
   text-decoration: none;
-  top: 7vh;
-  width: 40px;
-  height: 100px;
+  top: 6vh;
+}
+
+.done-recipe-name-container p {
+  max-width: 140px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .done-recipe-date-container {
