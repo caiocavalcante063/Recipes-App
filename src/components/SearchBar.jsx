@@ -12,22 +12,22 @@ export default function SearchBar({ title }) {
   const { setSearchData } = useContext(Context);
 
   const handleSearch = async (typeSelected, option, search) => {
-    if (title === 'Comidas') {
+    if (title === 'Foods') {
       const data = await fetchFoodReq(typeSelected, option, search);
       if (!data.meals) {
         return global
-          .alert('Sinto muito, não encontramos nenhuma receita para esses filtros.');
+          .alert('Sorry, no recipes found.');
       }
       setSearchData(data.meals);
       if (data.meals.length === 1) {
         history.push(`/comidas/${data.meals[0].idMeal}`);
       }
     }
-    if (title === 'Bebidas') {
+    if (title === 'Drinks') {
       const data = await fetchDrinkReq(typeSelected, option, search);
       if (!data.drinks) {
         return global
-          .alert('Sinto muito, não encontramos nenhuma receita para esses filtros.');
+          .alert('Sorry, no recipes found.');
       }
       setSearchData(data.drinks);
       if (data.drinks.length === 1) {
@@ -39,7 +39,7 @@ export default function SearchBar({ title }) {
   const searchRecipes = ({ target }, option) => {
     const text = target.value;
     if (option === 'f' && text.length > 1) {
-      return global.alert('Sua busca deve conter somente 1 (um) caracter');
+      return global.alert('Your search must contain only 1 (one) character.');
     }
     setSearchText(target.value);
   };
