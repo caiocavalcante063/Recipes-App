@@ -28,11 +28,11 @@ npm install
 ``` 
 ### Executando a aplicação
 
-  ```
+  ```bash
     cd src/ && npm start
   ```
  ### Executando os testes
  
-  ```
+  ```bash
     cd src/ && npm test
   ```
