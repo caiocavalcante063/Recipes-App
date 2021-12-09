@@ -4,7 +4,7 @@
 
 Este projeto trata-se de um Aplicativo de Receitas. A pessoa usuária é capaz de:
 
- - Ver, buscar, filtrar, favoritar e acompanhar o processo de preparação de receitas e drinks
+ - Ver, buscar, filtrar, favoritar e acompanhar o processo de preparação de receitas e drinks.
 
 ## Tecnologias utilizadas
 
