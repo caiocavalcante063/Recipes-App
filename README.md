@@ -13,7 +13,7 @@ Este projeto trata-se de um Aplicativo de Receitas. A pessoa usuária é capaz d
  - CSS3; 
  - Figma;
  - Bibliotecas [clipboard-copy](https://www.npmjs.com/package/clipboard-copy) e [react-multi-carousel](https://www.npmjs.com/package/react-multi-carousel);
-> Consome: [TheMealDB API](https://www.themealdb.com/), [The CockTailDB API](https://www.thecocktaildb.com/api.php) e ;
+> Consome: [TheMealDB API](https://www.themealdb.com/) e [The CockTailDB API](https://www.thecocktaildb.com/api.php);
 
 ## Executando o Projeto
 
