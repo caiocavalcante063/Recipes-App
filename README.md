@@ -11,7 +11,7 @@ Este projeto trata-se de um Aplicativo de Receitas. A pessoa usuária é capaz d
  - React, com Context API para geranciamento do estado da aplicação;
  - React Testing Library;
  - CSS3; 
- - Figma;
+ - [Figma](https://www.figma.com/file/WatDxtKl7g54QxhDi9qdbq/App-Receitas?node-id=0%3A1);
  - Bibliotecas [clipboard-copy](https://www.npmjs.com/package/clipboard-copy) e [react-multi-carousel](https://www.npmjs.com/package/react-multi-carousel);
 > Consome: [TheMealDB API](https://www.themealdb.com/) e [The CockTailDB API](https://www.thecocktaildb.com/api.php);
 
